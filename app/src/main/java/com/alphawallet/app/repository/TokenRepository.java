@@ -279,6 +279,12 @@ public class TokenRepository implements TokenRepositoryType {
     @Override
     public Single<Token> addToken(Wallet wallet, TokenInfo tokenInfo, ContractType contractType)
     {
+
+        Log.v(TAG, String.valueOf(wallet));
+        Log.v(TAG, String.valueOf(tokenInfo));
+        Log.v(TAG, String.valueOf(contractType));
+
+
         return Single.fromCallable(() -> {
             TokenFactory tf      = new TokenFactory();
             NetworkInfo  network = ethereumNetworkRepository.getNetworkByChain(tokenInfo.chainId);

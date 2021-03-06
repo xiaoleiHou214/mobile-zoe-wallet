@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 import com.alphawallet.app.C;
 import com.alphawallet.app.entity.ContractLocator;
@@ -70,6 +71,8 @@ public class AddTokenViewModel extends BaseViewModel {
     public LiveData<TokenInfo> tokenInfo() {
         return tokenInfo;
     }
+    private static final String TAG = "ActividadAgregarTokenVM";
+
 
     @Nullable
     Disposable scanNetworksDisposable;
@@ -95,6 +98,7 @@ public class AddTokenViewModel extends BaseViewModel {
     {
         //update token details as entered
         TokenInfo tf = new TokenInfo(address, name, symbol, decimals, true, chainId);
+        Log.v(TAG, String.valueOf(wallet.getValue()));
         addTokenInteract.add(tf, contractType, wallet.getValue())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

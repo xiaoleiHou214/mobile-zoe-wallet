@@ -54,7 +54,7 @@ We are committed to connecting businesses and consumers with the new digital eco
 
 We want to give businesses the whitelabel tools they need to develop their ethereum wallets, and join the tokenised economy.
 
-# Getting Started
+### Getting Started
 
 1. [Download](https://developer.android.com/studio/) Android Studio.
 1. Clone this repository

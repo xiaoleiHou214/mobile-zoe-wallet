@@ -17,17 +17,19 @@
             android:id="@+id/splash_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/ic_logo"
-            android:gravity="center_horizontal"/>
+            android:background="@drawable/ic_logo_zoe"
+            android:gravity="center_horizontal"
+            android:scaleX="2.0"
+            android:scaleY="2.0" />
 
         <TextView
-            android:layout_marginTop="9dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="26sp"
-            android:textColor="@color/text_black"
+            android:layout_marginTop="25dp"
             android:gravity="center_horizontal"
-            android:text="@string/welcome_to_alphawallet"/>
+            android:text="@string/welcome_to_alphawallet"
+            android:textColor="@color/text_black"
+            android:textSize="26sp" />
 
     </LinearLayout>
 
@@ -45,7 +47,7 @@
             android:id="@+id/button_create"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/nasty_green"
+            android:background="@color/blue_zoe"
             android:layout_marginBottom="@dimen/create_new_wallet_margin_bottom"
             android:text="@string/create_a_new_wallet"
             android:elevation="2dp"

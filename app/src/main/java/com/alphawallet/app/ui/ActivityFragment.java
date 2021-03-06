@@ -3,6 +3,7 @@ package com.alphawallet.app.ui;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.format.DateUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelStore;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -17,12 +19,16 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.alphawallet.app.R;
 import com.alphawallet.app.entity.ActivityMeta;
 import com.alphawallet.app.entity.ContractLocator;
+import com.alphawallet.app.entity.ContractType;
 import com.alphawallet.app.entity.EventMeta;
 import com.alphawallet.app.entity.Transaction;
 import com.alphawallet.app.entity.TransactionMeta;
 import com.alphawallet.app.entity.Wallet;
 import com.alphawallet.app.entity.WalletPage;
+import com.alphawallet.app.entity.tokens.TokenInfo;
 import com.alphawallet.app.interact.ActivityDataInteract;
+import com.alphawallet.app.interact.AddTokenInteract;
+import com.alphawallet.app.repository.TokenRepository;
 import com.alphawallet.app.repository.entity.RealmAuxData;
 import com.alphawallet.app.repository.entity.RealmTransaction;
 import com.alphawallet.app.repository.entity.RealmTransfer;
@@ -31,6 +37,8 @@ import com.alphawallet.app.ui.widget.adapter.RecycleViewDivider;
 import com.alphawallet.app.ui.widget.entity.TokenTransferData;
 import com.alphawallet.app.viewmodel.ActivityViewModel;
 import com.alphawallet.app.viewmodel.ActivityViewModelFactory;
+import com.alphawallet.app.viewmodel.AddTokenViewModel;
+import com.alphawallet.app.viewmodel.AddTokenViewModelFactory;
 import com.alphawallet.app.widget.EmptyTransactionsView;
 import com.alphawallet.app.widget.SystemView;
 
@@ -42,6 +50,8 @@ import java.util.Map;
 import javax.inject.Inject;
 
 import dagger.android.support.AndroidSupportInjection;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
@@ -67,6 +77,17 @@ public class ActivityFragment extends BaseFragment implements View.OnClickListen
     private final Handler handler = new Handler();
     private boolean checkTimer;
 
+    private AddTokenViewModel viewModelAddToken;
+    protected AddTokenViewModelFactory addTokenViewModelFactory;
+    private final AddTokenInteract addTokenInteract;
+
+
+    private static final String TAG = "ActividadPrincipal";
+
+    public ActivityFragment() {
+        addTokenInteract = null;
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -76,7 +97,53 @@ public class ActivityFragment extends BaseFragment implements View.OnClickListen
         setToolbarTitle(R.string.activity_label);
         initViewModel();
         initViews(view);
+        Log.v(TAG, "OnCreate");
         return view;
+    }
+
+    public void addZOEToken()
+    {
+        boolean isValid = true;
+        String symbol = "zoe";
+        String rawDecimals = "6";
+        String name = "ZOECASH";
+        int decimals = 0;
+
+        int chainId = 1;
+
+        String address = "0xd4515966cc9df9fd1f2e43265e56ee4d8fa718f8";
+
+        Log.v(TAG,"AddZoeToken");
+
+        ContractType contractTypeZOE = initializeZOEContractType();
+
+        if (isValid)
+        {
+            showProgress(true);
+            Log.v(TAG,"AddZoeToken saving token contract");
+
+            Log.v(TAG, String.valueOf(chainId));
+            Log.v(TAG, address);
+            Log.v(TAG, name);
+            Log.v(TAG, symbol);
+            Log.v(TAG, String.valueOf(decimals));
+            Log.v(TAG, contractTypeZOE.toString());
+
+            // save(chainId, address, name, symbol, decimals, contractTypeZOE);
+        }
+    }
+
+    private ContractType initializeZOEContractType(){
+        ContractType ERC20 = ContractType.ERC20;
+        return ERC20;
+    }
+
+    private void showProgress(Boolean shouldShowProgress) {
+        if (shouldShowProgress) {
+            systemView.showProgress(true);
+        } else {
+            systemView.showProgress(false);
+        }
     }
 
     private void initViewModel()
