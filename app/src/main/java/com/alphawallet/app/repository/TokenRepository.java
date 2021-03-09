@@ -280,9 +280,26 @@ public class TokenRepository implements TokenRepositoryType {
     public Single<Token> addToken(Wallet wallet, TokenInfo tokenInfo, ContractType contractType)
     {
 
-        Log.v(TAG, String.valueOf(wallet));
-        Log.v(TAG, String.valueOf(tokenInfo));
+        Log.v((TAG+" WALLET address"), wallet.address);
+        Log.v((TAG+" WALLET balance"), wallet.balance);
+        Log.v((TAG+"WALLET balanceSymbol"), wallet.balanceSymbol);
+        Log.v((TAG+" WALLET ENSname"), wallet.ENSname);
+        Log.v((TAG+" WALLET name"), wallet.name);
+        Log.v((TAG+" WALLET authLevel"), String.valueOf(wallet.authLevel));
+        Log.v((TAG+" WALLET lastBackupT"), String.valueOf(wallet.lastBackupTime));
+        Log.v((TAG+" WALLET type"), String.valueOf(wallet.type));
+        Log.v((TAG+ "WALLET walletCreatT"), String.valueOf(wallet.walletCreationTime));
+
+
+        Log.v((TAG+" TOKENINFO name"), tokenInfo.name);
+        Log.v((TAG+" TOKENINFO address"), tokenInfo.address);
+        Log.v((TAG+" TOKENINFO symbol"), tokenInfo.symbol);
+        Log.v((TAG+" TOKENINFO chainId"), String.valueOf(tokenInfo.chainId));
+        Log.v((TAG+" TOKENINFO decimals"), String.valueOf(tokenInfo.decimals));
+        Log.v((TAG+" TOKENINFO isEnabled"), String.valueOf(tokenInfo.isEnabled));
+
         Log.v(TAG, String.valueOf(contractType));
+
 
 
         return Single.fromCallable(() -> {

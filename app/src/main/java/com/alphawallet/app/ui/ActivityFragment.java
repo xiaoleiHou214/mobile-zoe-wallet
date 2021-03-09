@@ -129,7 +129,11 @@ public class ActivityFragment extends BaseFragment implements View.OnClickListen
             Log.v(TAG, String.valueOf(decimals));
             Log.v(TAG, contractTypeZOE.toString());
 
-            // save(chainId, address, name, symbol, decimals, contractTypeZOE);
+            // Wallet walletZOE =
+            // ContracType contratoZOE
+            // TokenInfo tokeninfoZOE
+
+            // addToken(chainId, address, name, symbol, decimals, contractTypeZOE);
         }
     }
 
