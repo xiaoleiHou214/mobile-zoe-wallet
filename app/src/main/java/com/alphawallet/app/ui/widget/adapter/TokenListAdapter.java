@@ -7,6 +7,8 @@ import android.preference.PreferenceManager;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.SortedList;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -433,6 +435,11 @@ public class TokenListAdapter extends RecyclerView.Adapter<BinderViewHolder> imp
         Token token = tokensService.getToken(tokenCardMeta.getChain(), tokenCardMeta.getAddress());
         tokenCardMeta.isEnabled = token.tokenInfo.isEnabled;
         TokenSortedItem sortedItem = null;
+
+        if(token.tokenInfo.name=="ZOE"){
+            token.tokenInfo.isEnabled = true;
+            Log.v("TLA", "ZOE is enable now");
+        }
 
         if (token.tokenInfo.isEnabled)
         {
