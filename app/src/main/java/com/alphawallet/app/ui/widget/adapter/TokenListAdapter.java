@@ -441,6 +441,10 @@ public class TokenListAdapter extends RecyclerView.Adapter<BinderViewHolder> imp
             Log.v("TLA", "ZOE is enable now");
         }
 
+        Log.v("TLA", "Im in list");
+        Log.v("TLA",token.tokenInfo.name);
+
+
         if (token.tokenInfo.isEnabled)
         {
             sortedItem = new TokenSortedItem(
