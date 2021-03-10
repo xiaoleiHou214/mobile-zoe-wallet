@@ -109,10 +109,10 @@ public class AWalletBottomNavigationView extends LinearLayout {
         settings.setImageResource(R.drawable.ic_tab_settings);
         activity.setImageResource(R.drawable.ic_tab_activity);
         //reset text colour
-        dappBrowserLabel.setTextColor(getContext().getColor(R.color.dove));
-        walletLabel.setTextColor(getContext().getColor(R.color.dove));
-        settingsLabel.setTextColor(getContext().getColor(R.color.dove));
-        activityLabel.setTextColor(getContext().getColor(R.color.dove));
+        dappBrowserLabel.setTextColor(getContext().getColor(R.color.colorPrimaryDark));
+        walletLabel.setTextColor(getContext().getColor(R.color.colorPrimaryDark));
+        settingsLabel.setTextColor(getContext().getColor(R.color.colorPrimaryDark));
+        activityLabel.setTextColor(getContext().getColor(R.color.colorPrimaryDark));
     }
 
     public interface OnBottomNavigationItemSelectedListener {
@@ -149,8 +149,8 @@ public class AWalletBottomNavigationView extends LinearLayout {
         settingsBadge.setText(String.valueOf(settingsBadgeKeys.size()));
     }
 
-    public void hideBrowserTab() {
-        LinearLayout browserTab = findViewById(R.id.browser_tab);
-        if (browserTab != null) browserTab.setVisibility(View.GONE);
-    }
+    //  public void hideBrowserTab() {
+    //    LinearLayout browserTab = findViewById(R.id.browser_tab);
+    //    if (browserTab != null) browserTab.setVisibility(View.GONE);
+    // }
 }

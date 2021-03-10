@@ -7,6 +7,9 @@
 	<color name="colorTheme">#FFFFFF</color>
 	<color name="colorHighlight">@color/azure</color>
 
+	<color name="PrimaryColorDark">#3D4C63</color>
+
+
 	<color name="secondary_text">#40000000</color>
 	<color name="toolbar_text_color">@color/black</color>
 	<color name="bottom_dialog_title">#89000000</color>

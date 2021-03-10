@@ -1,7 +1,7 @@
 {
 "MainNet":
-  [
-    {"address": "0xd4515966cc9df9fd1f2e43265e56ee4d8fa718f8", "name": "ZOE",   "isPopular": true, "network": 1}
+    [
+    {"address": "0xd4515966cc9df9fd1f2e43265e56ee4d8fa718f8", "name": "ZOE", "isPopular": true, "network": 1}
     ],
 "xDAI":
   [

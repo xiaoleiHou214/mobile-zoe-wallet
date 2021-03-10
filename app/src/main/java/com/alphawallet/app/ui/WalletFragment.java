@@ -660,9 +660,6 @@ public class WalletFragment extends BaseFragment implements
 
     @Override
     public boolean onMenuItemClick(MenuItem menuItem) {
-        if (menuItem.getItemId() == R.id.action_my_wallet) {
-            viewModel.showMyAddress(getContext());
-        }
         if (menuItem.getItemId() == R.id.action_scan) {
             viewModel.showQRCodeScanning(getActivity());
         }

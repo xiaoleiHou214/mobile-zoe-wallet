@@ -241,7 +241,7 @@ public class HomeActivity extends BaseNavigationActivity implements View.OnClick
             showPage(previousPage);
         }
 
-        if (CustomViewSettings.hideDappBrowser())
+        /*if (CustomViewSettings.hideDappBrowser())
         {
             removeDappBrowser();
         }
@@ -257,7 +257,7 @@ public class HomeActivity extends BaseNavigationActivity implements View.OnClick
             hideNavBar();
             //now remove the bottom margin
             ((DappBrowserFragment)dappBrowserFragment).softKeyboardVisible();
-        }
+        }*/
 
         if (bundle != null)
         {
