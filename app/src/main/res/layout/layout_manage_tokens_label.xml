@@ -2,7 +2,7 @@
 <RelativeLayout android:id="@+id/layout_manage_tokens"
     android:layout_width="match_parent"
     android:layout_height="65dp"
-    android:background="@drawable/background_divider_top_bottom"
+    android:background="@drawable/background_divider_top_bottom_zoe"
     android:orientation="horizontal"
     android:paddingEnd="16dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -16,10 +16,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="8dp"
         android:layout_alignParentBottom="true"
-        android:fontFamily="@font/font_semibold"
+        android:fontFamily="@font/font_bold"
         tools:text="@string/add_hide_tokens"
-        android:textColor="@color/black"
-        android:textSize="24sp" />
+        android:textColor="@color/white"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/text_ignore"
