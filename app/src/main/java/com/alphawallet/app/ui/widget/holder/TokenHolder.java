@@ -2,6 +2,8 @@ package com.alphawallet.app.ui.widget.holder;
 
 import android.app.Activity;
 import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import androidx.annotation.NonNull;
@@ -10,6 +12,7 @@ import androidx.core.content.ContextCompat;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -38,6 +41,7 @@ import java.math.RoundingMode;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
+import static androidx.core.content.ContextCompat.getColor;
 import static com.alphawallet.app.repository.EthereumNetworkBase.MAINNET_ID;
 
 public class TokenHolder extends BinderViewHolder<TokenCardMeta> implements View.OnClickListener, View.OnLongClickListener {
@@ -118,7 +122,40 @@ public class TokenHolder extends BinderViewHolder<TokenCardMeta> implements View
                 realmUpdate = null;
             }
 
-            tokenLayout.setBackgroundResource(R.drawable.background_marketplace_event);
+
+            if(token.getFullName().equals("ZOECASH (ZOE)")) {
+                balanceEth.setTextColor(getColor(getContext(),R.color.white));
+                issuerPlaceholder.setTextColor(getColor(getContext(),R.color.white));
+                issuer.setTextColor(getColor(getContext(),R.color.semitransparentWhite));
+                contractType.setTextColor(getColor(getContext(),R.color.semitransparentWhite));
+                tokenIcon.setTokenImage(R.mipmap.ic_launcher);
+
+                GradientDrawable shape = new GradientDrawable();
+                shape.setShape(GradientDrawable.RECTANGLE);
+                shape.setColor(getColor(getContext(),R.color.darkgrey_zoe));
+                shape.setCornerRadius(30);
+                tokenLayout.setBackgroundDrawable(shape);
+
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                    tokenLayout.setOutlineAmbientShadowColor(getColor(getContext(),R.color.grey2));
+                }
+
+                ViewGroup.LayoutParams p = tokenLayout.getLayoutParams();
+                if (p instanceof RelativeLayout.LayoutParams) {
+                    RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams)p;
+                    lp.setMargins(3,0,3,0);
+                    tokenLayout.setLayoutParams(lp);
+                }
+
+
+            }else{
+                tokenLayout.setBackgroundResource(R.drawable.background_marketplace_event);
+                tokenIcon.bindData(token, assetDefinition);
+            }
+
+            Log.v("TokenHolder", token.getFullName());
+
             if (EthereumNetworkRepository.isPriorityToken(token)) extendedInfo.setVisibility(View.GONE);
             contractSeparator.setVisibility(View.GONE);
 
@@ -128,7 +165,6 @@ public class TokenHolder extends BinderViewHolder<TokenCardMeta> implements View
 
             primaryElement = false;
 
-            tokenIcon.bindData(token, assetDefinition);
             tokenIcon.setOnTokenClickListener(onTokenClickListener);
 
             populateTicker();
@@ -158,7 +194,7 @@ public class TokenHolder extends BinderViewHolder<TokenCardMeta> implements View
         if (pendingDiff != null)
         {
             pendingText.setText(pendingDiff);
-            pendingText.setTextColor(ContextCompat.getColor(getContext(), (pendingDiff.startsWith("-")) ? R.color.red : R.color.green));
+            pendingText.setTextColor(getColor(getContext(), (pendingDiff.startsWith("-")) ? R.color.red : R.color.green));
         }
         else
         {
@@ -354,7 +390,7 @@ public class TokenHolder extends BinderViewHolder<TokenCardMeta> implements View
         double percentage = 0;
         try {
             percentage = Double.parseDouble(ticker.percentChange24h);
-            color = ContextCompat.getColor(getContext(), percentage < 0 ? R.color.red : R.color.green);
+            color = getColor(getContext(), percentage < 0 ? R.color.red : R.color.green);
             formattedPercents = (percentage < 0 ? "(" : "(+") + ticker.percentChange24h + "%)";
             text24Hours.setText(formattedPercents);
             text24Hours.setTextColor(color);

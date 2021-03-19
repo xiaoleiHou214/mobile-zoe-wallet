@@ -25,6 +25,9 @@ public class TokenCardMeta implements Comparable<TokenCardMeta>, Parcelable
     public final ContractType type;
     public final String balance;
 
+    public final String tokenName;
+
+
     /*
     Initial value is False as Token considered to be Hidden
      */
@@ -37,6 +40,7 @@ public class TokenCardMeta implements Comparable<TokenCardMeta>, Parcelable
         this.type = type;
         this.nameWeight = calculateTokenNameWeight(chainId, tokenAddress, svs, name, symbol, isEthereum());
         this.balance = balance;
+        this.tokenName = name;
     }
 
     public TokenCardMeta(int chainId, String tokenAddress, String balance, long timeStamp, long lastTxUpdate, ContractType type)
@@ -47,6 +51,8 @@ public class TokenCardMeta implements Comparable<TokenCardMeta>, Parcelable
         this.type = type;
         this.nameWeight = 1000;
         this.balance = balance;
+        this.tokenName = String.valueOf(type);
+
     }
 
     public TokenCardMeta(Token token)
@@ -57,6 +63,8 @@ public class TokenCardMeta implements Comparable<TokenCardMeta>, Parcelable
         this.type = token.getInterfaceSpec();
         this.nameWeight = 1000;
         this.balance = token.balance.toString();
+        this.tokenName = token.tokenInfo.name;
+
     }
 
     protected TokenCardMeta(Parcel in)
@@ -67,6 +75,8 @@ public class TokenCardMeta implements Comparable<TokenCardMeta>, Parcelable
         nameWeight = in.readInt();
         type = ContractType.values()[in.readInt()];
         balance = in.readString();
+        this.tokenName = in.readString();
+
     }
 
     public static final Creator<TokenCardMeta> CREATOR = new Creator<TokenCardMeta>() {
@@ -199,6 +209,7 @@ public class TokenCardMeta implements Comparable<TokenCardMeta>, Parcelable
     public boolean isEthereum()
     {
         return type == ContractType.ETHEREUM;
+
     }
 
     public boolean isNFT()
