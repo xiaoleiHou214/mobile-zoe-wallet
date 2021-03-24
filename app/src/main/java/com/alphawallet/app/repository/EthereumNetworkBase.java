@@ -105,7 +105,7 @@ public abstract class EthereumNetworkBase implements EthereumNetworkRepositoryTy
     static final NetworkInfo[] DEFAULT_NETWORKS = new NetworkInfo[] {
             new NetworkInfo(C.ETHEREUM_NETWORK_NAME, C.ETH_SYMBOL,
                     MAINNET_RPC_URL,
-                    "https://cn.etherscan.com/tx/",MAINNET_ID, true,
+                    "https://cn.etherscan.com/tx/",MAINNET_ID, false,
                     MAINNET_FALLBACK_RPC_URL,
                     "https://api-cn.etherscan.com/"),
             new NetworkInfo(C.CLASSIC_NETWORK_NAME, C.ETC_SYMBOL,
@@ -139,7 +139,7 @@ public abstract class EthereumNetworkBase implements EthereumNetworkRepositoryTy
                     SOKOL_RPC_URL,
                     "https://blockscout.com/poa/sokol/tx/",SOKOL_ID, false, SOKOL_RPC_URL, "https://blockscout.com/poa/sokol/"),
             new NetworkInfo(C.RINKEBY_NETWORK_NAME, C.ETH_SYMBOL, RINKEBY_RPC_URL,
-                    "https://rinkeby.etherscan.io/tx/",RINKEBY_ID, false,
+                    "https://rinkeby.etherscan.io/tx/",RINKEBY_ID, true,
                     RINKEBY_FALLBACK_RPC_URL,
                     "https://api-rinkeby.etherscan.io/"),
             new NetworkInfo(C.GOERLI_NETWORK_NAME, C.GOERLI_SYMBOL, GOERLI_RPC_URL,
