@@ -112,7 +112,7 @@
                     android:textSize="12sp" />
             </LinearLayout>
 
-            <com.alphawallet.app.widget.ChainName
+            <com.zoecasheth.app.widget.ChainName
                 android:id="@+id/chain_name"
                 android:layout_gravity="center_vertical|end"
                 android:layout_marginEnd="6dp"
@@ -166,7 +166,7 @@
         android:layout_centerInParent="true"
         android:indeterminateTint="@color/azure" />
 
-    <com.alphawallet.app.widget.FunctionButtonBar
+    <com.zoecasheth.app.widget.FunctionButtonBar
         android:id="@+id/layoutButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

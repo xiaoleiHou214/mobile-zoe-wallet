@@ -28,7 +28,7 @@
             android:fontFamily="@font/font_regular"
             android:gravity="center_horizontal"
             android:text="@string/welcome_to_alphawallet"
-            android:textColor="#256CFE"
+            android:textColor="#345B9D"
             android:textSize="40dp" />
 
 

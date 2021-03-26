@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.alphawallet.app"
+    package="com.zoecasheth.app"
     android:targetSandboxVersion="1">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -35,7 +35,7 @@
         tools:replace="android:name, android:theme, android:allowBackup">
         <activity
             android:launchMode="singleTask"
-            android:name=".ui.SplashActivity"
+            android:name="com.zoecasheth.app.ui.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -135,104 +135,104 @@
         </provider>
 
         <activity
-            android:name=".ui.WalletsActivity"
+            android:name="com.zoecasheth.app.ui.WalletsActivity"
             android:label="@string/title_account_list" />
 
         <service
-            android:name=".service.WalletConnectService"
+            android:name="com.zoecasheth.app.service.WalletConnectService"
             android:enabled="true">
         </service>
 
         <activity
-            android:name=".ui.ImportWalletActivity"
+            android:name="com.zoecasheth.app.ui.ImportWalletActivity"
             android:label="@string/title_import"
             android:screenOrientation="sensor"
             android:windowSoftInputMode="stateAlwaysVisible|adjustResize" />
 
         <activity
-            android:name=".ui.TransactionDetailActivity"
+            android:name="com.zoecasheth.app.ui.TransactionDetailActivity"
             android:label="@string/title_transaction_details" />
         <activity
-            android:name=".ui.MyAddressActivity"
+            android:name="com.zoecasheth.app.ui.MyAddressActivity"
             android:label="@string/title_my_address" />
 
         <activity
-            android:name=".ui.SendActivity"
+            android:name="com.zoecasheth.app.ui.SendActivity"
             android:label="@string/title_activity_send"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name=".ui.ConfirmationActivity"
+            android:name="com.zoecasheth.app.ui.ConfirmationActivity"
             android:label="@string/title_activity_confirmation" />
 
         <activity
-            android:name=".ui.AddTokenActivity"
+            android:name="com.zoecasheth.app.ui.AddTokenActivity"
             android:label="@string/title_add_token" />
 
         <activity
-            android:name=".ui.AssetDisplayActivity"
+            android:name="com.zoecasheth.app.ui.AssetDisplayActivity"
             android:label="@string/title_use_token" />
 
         <activity
-            android:name=".ui.RedeemSignatureDisplayActivity"
+            android:name="com.zoecasheth.app.ui.RedeemSignatureDisplayActivity"
             android:label="@string/title_use_token" />
 
         <activity
-            android:name=".ui.GasSettingsActivity"
+            android:name="com.zoecasheth.app.ui.GasSettingsActivity"
             android:label="@string/title_send_settings" />
 
         <activity
-            android:name=".ui.GasSettingsActivityLegacy"
+            android:name="com.zoecasheth.app.ui.GasSettingsActivityLegacy"
             android:label="@string/title_send_settings" />
 
         <activity
-            android:name=".ui.SellDetailActivity"
+            android:name="com.zoecasheth.app.ui.SellDetailActivity"
             android:label="@string/action_sell"
             android:windowSoftInputMode="adjustPan" />
 
         <activity
-            android:name=".ui.RedeemAssetSelectActivity"
+            android:name="com.zoecasheth.app.ui.RedeemAssetSelectActivity"
             android:label="@string/title_redeem" />
 
         <activity
-            android:name=".ui.HomeActivity"
+            android:name="com.zoecasheth.app.ui.HomeActivity"
             android:label="@string/toolbar_header_wallet"
             android:windowSoftInputMode="adjustPan" />
 
         <activity
-            android:name=".ui.ImportTokenActivity"
+            android:name="com.zoecasheth.app.ui.ImportTokenActivity"
             android:label="@string/title_import_token" />
 
         <activity
-            android:name=".ui.TransferTicketActivity"
+            android:name="com.zoecasheth.app.ui.TransferTicketActivity"
             android:label="@string/label_transfer_ticket" />
 
         <activity
-            android:name=".ui.TransferTicketDetailActivity"
+            android:name="com.zoecasheth.app.ui.TransferTicketDetailActivity"
             android:label="@string/label_transfer_ticket_detail" />
 
         <activity
-            android:name=".ui.HelpActivity"
+            android:name="com.zoecasheth.app.ui.HelpActivity"
             android:label="@string/toolbar_header_help" />
 
         <activity
-            android:name=".ui.zxing.QRScanningActivity"
+            android:name="com.zoecasheth.app.ui.zxing.QRScanningActivity"
             android:label="@string/qr_scanner" />
 
         <activity
-            android:name=".ui.TokenDetailActivity"
+            android:name="com.zoecasheth.app.ui.TokenDetailActivity"
             android:label="@string/token_details" />
 
         <activity
-            android:name=".ui.Erc20DetailActivity"
+            android:name="com.zoecasheth.app.ui.Erc20DetailActivity"
             android:label="@string/erc20_details" />
 
         <activity
-            android:name=".ui.TokenFunctionActivity"
+            android:name="com.zoecasheth.app.ui.TokenFunctionActivity"
             android:label="@string/token_function" />
 
         <activity
-            android:name=".ui.FunctionActivity"
+            android:name="com.zoecasheth.app.ui.FunctionActivity"
             android:label="@string/token_function" />
 
         <!--<service android:name="AlphaWalletFirebaseMessagingService">-->
@@ -254,66 +254,66 @@
         <!--android:resource="@color/colorAccent" />-->
 
         <activity
-            android:name=".ui.WalletActionsActivity"
+            android:name="com.zoecasheth.app.ui.WalletActionsActivity"
             android:label="Wallet Actions" />
 
         <activity
-            android:name=".ui.AddEditDappActivity"
+            android:name="com.zoecasheth.app.ui.AddEditDappActivity"
             android:label="Add DApp" />
 
         <activity
-            android:name=".ui.SelectNetworkActivity"
+            android:name="com.zoecasheth.app.ui.SelectNetworkActivity"
             android:label="Select Network Filters" />
 
         <activity
-            android:name=".ui.TokenManagementActivity"
+            android:name="com.zoecasheth.app.ui.TokenManagementActivity"
             android:label="Manage Tokens" />
 
         <activity
-            android:name=".ui.SelectLocaleActivity"
+            android:name="com.zoecasheth.app.ui.SelectLocaleActivity"
             android:label="Select Language" />
 
         <activity
-            android:name=".ui.SelectCurrencyActivity"
+            android:name="com.zoecasheth.app.ui.SelectCurrencyActivity"
             android:label="Select Currency" />
 
         <activity
-            android:name=".ui.BackupKeyActivity"
+            android:name="com.zoecasheth.app.ui.BackupKeyActivity"
             android:windowSoftInputMode="stateHidden|adjustResize" />
 
         <activity
-            android:name=".ui.SupportSettingsActivity"
+            android:name="com.zoecasheth.app.ui.SupportSettingsActivity"
             android:label="Support Settings" />
 
         <activity
-            android:name=".ui.AdvancedSettingsActivity"
+            android:name="com.zoecasheth.app.ui.AdvancedSettingsActivity"
             android:label="Advanced Settings" />
 
         <activity
-            android:name=".ui.StaticViewer"
+            android:name="com.zoecasheth.app.ui.StaticViewer"
             android:label="View Text" />
 
-        <activity android:name=".ui.TokenScriptManagementActivity"
+        <activity android:name="com.zoecasheth.app.ui.TokenScriptManagementActivity"
             android:label="@string/tokenscript_management"/>
 
-        <activity android:name=".ui.TokenActivity"
+        <activity android:name="com.zoecasheth.app.ui.TokenActivity"
             android:label="@string/activity_label"/>
 
         <activity
-            android:name=".ui.WalletConnectActivity"
+            android:name="com.zoecasheth.app.ui.WalletConnectActivity"
             android:launchMode="singleTop"
             android:label="WalletConnect" />
 
         <activity
-            android:name=".ui.SignDetailActivity"
+            android:name="com.zoecasheth.app.ui.SignDetailActivity"
             android:label="Sign Details" />
 
         <activity
-            android:name=".ui.WalletConnectSessionActivity"
+            android:name="com.zoecasheth.app.ui.WalletConnectSessionActivity"
             android:label="WalletConnect Sessions" />
 
         <activity
-            android:name=".ui.TransactionSuccessActivity"
+            android:name="com.zoecasheth.app.ui.TransactionSuccessActivity"
             android:label="Transaction Success" />
 
     </application>

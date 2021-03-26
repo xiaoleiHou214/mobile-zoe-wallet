@@ -103,7 +103,7 @@
                 tools:text="(New: 31.1818 ETH)"
                 android:textSize="@dimen/sp15"/>
 
-            <com.alphawallet.app.widget.ChainName
+            <com.zoecasheth.app.widget.ChainName
                 android:id="@+id/chain_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -119,24 +119,24 @@
 
     <!-- End TODO -->
 
-    <com.alphawallet.app.widget.AddressDetailView
+    <com.zoecasheth.app.widget.AddressDetailView
         android:id="@+id/requester"
         android:visibility="gone"
         custom:label="@string/requester_url"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <com.alphawallet.app.widget.GasWidget
+    <com.zoecasheth.app.widget.GasWidget
         android:id="@+id/gas_widgetx"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <com.alphawallet.app.widget.TransactionDetailWidget
+    <com.zoecasheth.app.widget.TransactionDetailWidget
         android:id="@+id/detail_widget"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <com.alphawallet.app.widget.AddressDetailView
+    <com.zoecasheth.app.widget.AddressDetailView
         android:id="@+id/recipient"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -187,12 +187,12 @@
         android:layout_height="1dp"
         android:background="@color/mercury" />
 
-    <com.alphawallet.app.widget.ConfirmationWidget
+    <com.zoecasheth.app.widget.ConfirmationWidget
         android:id="@+id/confirmation_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <com.alphawallet.app.widget.FunctionButtonBar
+    <com.zoecasheth.app.widget.FunctionButtonBar
         android:id="@+id/layoutButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
